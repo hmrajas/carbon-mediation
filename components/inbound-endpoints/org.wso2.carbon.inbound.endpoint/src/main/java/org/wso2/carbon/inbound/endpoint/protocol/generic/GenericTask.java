@@ -27,16 +27,16 @@ public class GenericTask extends InboundTask {
     private static final Log logger = LogFactory.getLog(GenericTask.class.getName());
 
     private GenericPollingConsumer pollingConsumer;
-    
+
     public GenericTask(GenericPollingConsumer pollingConsumer, long interval) {
-    	logger.debug("Generic Task initalize.");
-    	this.interval = interval;
-    	this.pollingConsumer = pollingConsumer;
+        logger.debug("Generic Task initalize.");
+        this.interval = interval;
+        this.pollingConsumer = pollingConsumer;
     }
 
     protected void taskExecute() {
-    	logger.debug("File Task executing.");
-    	pollingConsumer.poll();
+        logger.debug("File Task executing.");
+        pollingConsumer.poll();
     }
 
 
@@ -46,7 +46,6 @@ public class GenericTask extends InboundTask {
     }
 
     public void destroy() {
-
         logger.debug("Destroying Task. ");
         pollingConsumer.destroy();
     }
