@@ -136,4 +136,8 @@ public abstract class GenericPollingConsumer {
         axis2MsgCtx.setMessageID(UUIDGenerator.getUUID());
         return msgCtx;
     }
+
+    public abstract void init();
+
+    public abstract void destroy();
 }

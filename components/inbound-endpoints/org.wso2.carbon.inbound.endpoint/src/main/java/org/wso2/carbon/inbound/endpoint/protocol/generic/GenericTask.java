@@ -42,10 +42,13 @@ public class GenericTask extends InboundTask {
 
     public void init(SynapseEnvironment synapseEnvironment) {
         logger.debug("Initializing Task.");
+        pollingConsumer.init();
     }
 
     public void destroy() {
+
         logger.debug("Destroying Task. ");
+        pollingConsumer.destroy();
     }
 
 }
